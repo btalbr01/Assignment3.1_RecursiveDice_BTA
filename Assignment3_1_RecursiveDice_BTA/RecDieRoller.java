@@ -2,8 +2,8 @@ import java.util.Random;
 public class RecDieRoller 
 {
 	/**
-	 * Creates integers to track total rolls, rolls of 2, 
-	 * and a float to calculate the mean number of die rolls of 2 in 1000 rolls.
+	 * Creates integers to track total rolls, rolls of 2, a float to calculate the 
+	 * mean number of die rolls of 2 in 1000 rolls.
 	 */
 	int totalRolls;
 	int twoRolls;
@@ -58,11 +58,13 @@ public class RecDieRoller
 		 * mean calculats what percentage of the total rolls were 2s.
 		 * Then prints out twoRolls, totalRolls, and the mean.
 		 */
-		mean = (twoRolls/(float)totalRolls)*100;
+		mean = ((float)totalRolls/twoRolls);
 		System.out.print("Rolls of 2: " + twoRolls + "\n" + "Total rolls: " + totalRolls
-				 + "\nMean: ");
+				 + "\nMean number of rolls to get 2: ");
 		System.out.printf("%,.2f", mean);
-		System.out.println("%");
+		/**
+		 * Returns 0 once the recursion is done.
+		 */
 		return 0;
 	}//end class
 }//end class
