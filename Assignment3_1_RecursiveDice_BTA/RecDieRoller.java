@@ -35,27 +35,25 @@ public class RecDieRoller
 		
 		/**
 		 * Checks for a roll of a 2 and if total rolls are less than 1000.
-		 * If true, increments twoRolls +1 and totalRolls +1, then calls itself.
+		 * If true, increments twoRolls +1.
 		 */
 		if (rolls == 2 && totalRolls < 1000)
 		{
 			twoRolls++;
+		}//end if
+		
+		/**
+		 * Checks if totalRolls is less than 1000. 
+		 * If true, increments totalRolls +1 and calls itself.
+		 */
+		if (totalRolls < 1000)
+		{
 			totalRolls++;
 			return roll(rolls);
 		}//end if
 		
 		/**
-		 * If the roll is not 2, checks if totalRolls is less than 1000. 
-		 * If true, increments totalRolls and calls itself.
-		 */
-		else if (totalRolls < 1000)
-		{
-			totalRolls++;
-			return roll(rolls);
-		}//end else if
-		
-		/**
-		 * mean calculats what percentage of the total rolls were 2s.
+		 * mean calculats the average number of rolls to get a 2.
 		 * Then prints out twoRolls, totalRolls, and the mean.
 		 */
 		mean = ((float)totalRolls/twoRolls);
